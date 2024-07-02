@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
-# Debugging apache
-sudo service apache2 start
+# This script starts Apache and sets up a simple webpage
+
+# Suppress the ServerName warning
+echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
+# Start Apache service
+service apache2 start
+
+# Create the index.html file with the required content
+echo "Hello Holberton" > /var/www/html/index.html
