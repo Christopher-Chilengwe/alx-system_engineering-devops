@@ -1,25 +1,10 @@
 #!/usr/bin/env bash
+# Configure your Nginx server so that /redirect_me is redirecting
+# to another page.
+sudo apt-get update -y
+sudo apt-get install -y nginx
 
-# Update package lists and install Nginx
-echo -e "Updating and installing Nginx.\n"
-sudo apt-get update -y -qq && \
-sudo apt-get install nginx -y
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://twitter.com/jossvega103 permanent;" /etc/nginx/sites-enabled/default
 
-echo -e "\nSetting up some minor stuff.\n"
-
-# Backup default index
-sudo cp /var/www/html/index.nginx-debian.html /var/www/html/index.nginx-debian.html.bckp
-
-# Create a simple index file for testing purposes
-echo -e "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html > /dev/null
-
-# Configure Nginx redirection with explicit HTTP header
-sudo sed -i '/listen 80 default_server;/a \
-    location /redirect_me { \
-        return 301 https://github.com/Christopher-Chilengwe/alx-higher_level_programming; \
-    }' /etc/nginx/sites-available/default
-
-# Restart Nginx to apply changes
 sudo service nginx restart
-
-echo -e "\nCompleted.\n"
