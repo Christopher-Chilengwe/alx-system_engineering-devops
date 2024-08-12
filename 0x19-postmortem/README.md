@@ -1,33 +1,33 @@
-# Postmortem
+# Postmortem Guide
 
-Learning how to write an Incident Report, also referred to as a Postmortem. This postmortem follows the guidelines used closely by google engineers to file reports. The report is made up of five parts, an issue summary, a timeline, root cause analysis, resolution and recovery, and lastly, corrective and preventative measures. Lets review each of these parts in detail.
+This guide provides an overview of how to write an Incident Report, also known as a Postmortem. The structure is inspired by the approach used by Google engineers for their incident reports. The report is divided into five key sections: Issue Summary, Timeline, Root Cause Analysis, Resolution and Recovery, and Corrective and Preventative Measures. Let's explore each section in detail.
 
 ### Issue Summary
 
-- short summary (5 sentences)
-- list the duration along with start and end times (include timezone)
-- state the impact (most user requests resulted in 500 errors, at peak 100%)
-- close with root cause
+- Provide a concise summary (around 5 sentences).
+- Include the duration of the incident, with start and end times (specify the timezone).
+- Describe the impact (e.g., most user requests resulted in 500 errors, with 100% impact at the peak).
+- Conclude with the root cause.
 
 ### Timeline
 
-- list the timezone
-- covers the outage duration
-- when outage began
-- when staff was notified
-- actions, events, …
-- when service was restored
+- Specify the timezone.
+- Detail the outage duration.
+- Note when the outage began.
+- Indicate when staff was notified.
+- Include all actions and events.
+- Mention when the service was restored.
 
 ### Root Cause
 
-- give a detailed explanation of event
-- do not sugarcoat
+- Offer a thorough explanation of the event.
+- Be transparent—avoid minimizing the issue.
 
-### Resolution and recovery
+### Resolution and Recovery
 
-- give detailed explanation of actions taken (includes times)
+- Provide a detailed account of the actions taken, including specific times.
 
 ### Corrective and Preventative Measures
 
-- itemized list of ways to prevent it from happening again
-- what can we do better next time?
+- List specific steps to prevent future incidents.
+- Consider what can be improved for next time.
